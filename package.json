@@ -20,5 +20,6 @@
   "bugs": {
     "url": "https://github.com/AlexMayol/polaroid-generator/issues"
   },
-  "homepage": "https://github.com/AlexMayol/polaroid-generator#readme"
+  "homepage": "https://github.com/AlexMayol/polaroid-generator#readme",
+  "dependencies": {}
 }

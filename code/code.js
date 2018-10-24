@@ -46,10 +46,42 @@ new Vue({
       };
       reader.readAsDataURL(event.target.files[0]);
     },
-    screenshot(){
-      html2canvas(document.querySelector("#polaroid")).then(canvas => {
-        document.body.appendChild(canvas)
-    });
+    screenshot() {
+      console.log("ok");
+      var node = document.getElementById('polaroid');
+      domtoimage.toPng(node)
+      .then(function (dataUrl) {
+          var img = new Image();
+          img.src = dataUrl;
+          document.body.appendChild(img);
+      })
+      .catch(function (error) {
+          console.error('oops, something went wrong!', error);
+      });
+      //   domtoimage.toJpeg(document.getElementById('hola'), { quality: 0.95 })
+      // .then(function (dataUrl) {
+      // console.log(dataUrl);
+      // let res = document.createElement('img');
+      // res.src = dataUrl;
+      // console.log(res);
+      // // document.body.appendChild(res);
+
+      // var a = document.createElement('a');
+      // a.href = dataUrl;
+      // a.download = "test.png";
+      // document.body.appendChild(a);
+      // a.click();
+      // document.body.removeChild(a);
+      // var link = document.createElement('a');
+      // link.download = 'my-image-name.jpeg';
+      // link.href = dataUrl;
+      // link.click();
+      // });
+
+      //   html2canvas(document.querySelector("#polaroid")).then(canvas => {
+      //     document.body.appendChild(canvas)
+      // });
+      // }
     }
   }
 });
