@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang=en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Hello, Google!">
+  <meta name="subject" content="just a simple exercise for fun">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link href="style/style.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cssgram/0.1.10/cssgram.min.css">
+  
+  <noscript>
+    Enable JavaScript in order to see this page properly
+  </noscript>
+  <title>HTML Boilerplate</title>
+</head>
+
+<body>
+  <header>
+  
+  </header>
+  <main id="app">
+    <input type="file" accept="image/*" @change="loadFile" name="" id="image">
+    <input type="text" v-model="description">
+    <label for="filtro">Selecciona filtro</label>
+    <button @click="screenshot">Get Photo!</button>
+    <select name="" id="filtro" v-model="selected">
+      <option v-for="filtro in filtros" :value="filtro">{{filtro}}</option>
+    </select>
+
+    <div id="polaroid" class="polaroid">
+        <img :src="src" alt="" :class="selected" />
+        <p>{{description}}</p>
+    </div>
+
+  </main>
+  <footer>
+
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="code/html2canvas.js"></script>
+  <script src="code/code.js"></script>
+</body>
+
+</html>

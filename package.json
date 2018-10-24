@@ -1,0 +1,24 @@
+{
+  "name": "polaroid-generator",
+  "version": "1.0.0",
+  "description": "Make polaroid-like images from your browser!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexMayol/polaroid-generator.git"
+  },
+  "keywords": [
+    "polaroid",
+    "vue",
+    "generator"
+  ],
+  "author": "Alex Mayol",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexMayol/polaroid-generator/issues"
+  },
+  "homepage": "https://github.com/AlexMayol/polaroid-generator#readme"
+}
