@@ -6,9 +6,18 @@ html {
 body {
   margin: 0;
 } 
+#polaroid-container .polaroid{
+
+  width: 100%;
+  height: 100%;
+}
+.polaroid-container{
+  width: 100%;
+}
 
 .polaroid{
-  width: 400px;
+  width: 40%;
+  min-width: 300px;
   height: 500px;
   display: flex;
   flex-direction: column;
@@ -16,9 +25,29 @@ body {
   margin: 0 auto;
   background-color: white;
   padding: 1rem;
+  border-radius: var(--polaroid-br);
 }
 .polaroid img{
+  border-radius: var(--image-br);
   width: 100%;
   object-fit: cover;
   max-width: 100%;
+}
+
+.caption{
+  transform: rotateZ(var(--caption-rotation));
+}
+.filtros-preview{
+  display: flex;
+  flex-wrap: wrap;
+}
+.filtros-preview div{
+  width: 300px;
+  height: auto;
+  object-fit: cover;
+}
+.filtros-preview div img{
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }

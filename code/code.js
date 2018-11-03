@@ -32,32 +32,45 @@ new Vue({
       "willow",
       "xpro2"
     ],
-    selected: ""
+    selected: "",
+    rotateText: 0,
+    polaroid_br: 0,
+    image_br: 0
   },
   methods: {
     loadFile(event) {
       this.src = window.URL.createObjectURL(
         document.getElementById("image").files[0]
       );
-      console.log(event.target.files);
       let reader = new FileReader();
-      reader.onload = function() {
+      reader.readAsDataURL(event.target.files[0]);
+      reader.onload = function(evt) {
+        console.log(evt);
+       
         this.src = reader.result;
       };
-      reader.readAsDataURL(event.target.files[0]);
+      var image = new Image();
+      image.onload = function() {
+        var height = this.height;
+        var width = this.width;
+        console.log(`height is ${height} and width is ${width}`);
+        return true;
+      };
+     
     },
     screenshot() {
       console.log("ok");
-      var node = document.getElementById('polaroid');
-      domtoimage.toPng(node)
-      .then(function (dataUrl) {
+      var node = document.getElementById("polaroid-container");
+      domtoimage
+        .toPng(node)
+        .then(function(dataUrl) {
           var img = new Image();
           img.src = dataUrl;
           document.body.appendChild(img);
-      })
-      .catch(function (error) {
-          console.error('oops, something went wrong!', error);
-      });
+        })
+        .catch(function(error) {
+          console.error("oops, something went wrong!", error);
+        });
       //   domtoimage.toJpeg(document.getElementById('hola'), { quality: 0.95 })
       // .then(function (dataUrl) {
       // console.log(dataUrl);
